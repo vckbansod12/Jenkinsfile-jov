@@ -11,7 +11,7 @@ pipeline {
 }
 
 def setBuildStatus(String message, String state) {	
-	stage([
+	steps([
 		$class: "GitHubCommitStatusSetter",
 		reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/my-org/my-repo"],
     		contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "ci/jenkins/build-status"],
