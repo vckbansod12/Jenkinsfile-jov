@@ -4,8 +4,10 @@ pipeline {
 	agent any 
 
 	stages {
-		stage ('Build') {
-			setBuildStatus("Build complete", "SUCCESS")														
+		stage ('Build') {			
+			steps {
+				setBuildStatus("Build complete", "SUCCESS")
+			}															
 		}
 	}
 }
