@@ -6,7 +6,8 @@ pipeline {
 	stages {
 		stage ('Build') {			
 			steps {
-				setBuildStatus("Build complete", "SUCCESS")
+				sh './test'
+				setBuildStatus("Build complete", "SUCCESS")				
 			}															
 		}
 	}
@@ -17,7 +18,6 @@ def setBuildStatus(String message, String state) {
 		$class: "GitHubCommitStatusSetter",
 		reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/vckbansod12/Jenkinsfile-jov"],
     		contextSource: [$class: "DefaultCommitContextSource"],
-   		errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
       		statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
     ]);
 }
