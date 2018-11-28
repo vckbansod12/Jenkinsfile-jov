@@ -14,15 +14,15 @@ pipeline {
 	}
 }
 
-def setBuildStatus(String message, String state) {	
-	step([
-		$class: "GitHubCommitStatusSetter",
-		reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/vckbansod12/Jenkinsfile-jov"],
-    		contextSource: [$class: "DefaultCommitContextSource"],
-		statusResultSource: [ $class: "ConditionalStatusResultSource"]
-      		statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
-    ]);
-}
+//def setBuildStatus(String message, String state) {	
+//	step([
+//		$class: "GitHubCommitStatusSetter",
+//		reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/vckbansod12/Jenkinsfile-jov"],
+//    		contextSource: [$class: "DefaultCommitContextSource"],
+//		statusResultSource: [ $class: "ConditionalStatusResultSource"]
+//      		statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
+//    ]);
+//}
 
 def setBuildStatus() {	
 	step([
