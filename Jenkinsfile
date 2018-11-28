@@ -15,7 +15,7 @@ pipeline {
       						statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]] ]
       					]);
 				}
-				setBuildStatus("Build complete", "SUCCESS")
+				setBuildStatus("Build complete", "SUCCESS");
 			}		
 		}
 	}
