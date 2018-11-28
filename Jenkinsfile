@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 pipeline {
 	agent any 
 
@@ -14,8 +16,7 @@ pipeline {
       					]);
 				}
 			}
+		setBuildStatus{"Build complete", "SUCCESS"}
 		}
 	}
 }
-
-setBuildStatus{"Build complete", "SUCCESS"}
