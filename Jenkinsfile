@@ -6,7 +6,7 @@ pipeline {
 	stages {
 		stage ('Build') {
 			steps {
-				def void setBuildStatus(String message, String state) {
+				void setBuildStatus(String message, String state) {
 					step([
 						$class: "GitHubCommitStatusSetter",
 						reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/my-org/my-repo"],
