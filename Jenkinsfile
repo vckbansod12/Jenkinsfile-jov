@@ -6,11 +6,19 @@ pipeline {
 	stages {
 		stage ('Build') {			
 			steps {
-				//sh './test'
-				setBuildStatus("Build complete", "SUCCESS")				
+				//sh './test'								
 			}															
-		}
+		}	
 	}
+	post {
+		success {
+			setBuildStatus("Build complete", "SUCCESS")
+		}
+		failure {
+			setBuildStatus("Build complete", "FAILURE")
+		}
+	}	
+
 }
 
 def setBuildStatus(String message, String state) {	
