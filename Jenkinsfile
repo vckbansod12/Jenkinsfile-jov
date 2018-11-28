@@ -16,7 +16,7 @@ pipeline {
 			setBuildStatus("Build complete", "SUCCESS")
 		}
 		failure {
-			setBuildStatus("Build complete", "FAILURE")
+			setBuildStatus("Build failed", "FAILURE")
 		}
 	}	
 
