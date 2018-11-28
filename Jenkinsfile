@@ -8,7 +8,7 @@ pipeline {
 			steps {
 				//sh './test'
 				//setBuildStatus("Build complete", "FAILURE")
-				updateGithubCommitStatus
+				updateGithubCommitStatus()
 				//setBuildStatus()
 			}															
 		}
