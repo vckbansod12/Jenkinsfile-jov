@@ -7,7 +7,7 @@ pipeline {
 		stage ('Build') {			
 			steps {
 				sh './test'
-				setBuildStatus("Build complete", "SUCCESS")				
+				setBuildStatus("Build complete", "FAILURE")				
 			}															
 		}
 	}
