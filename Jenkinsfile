@@ -5,7 +5,7 @@ pipeline {
 
 	stages {
 		stage ('Build') {
-			steps setBuildStatus("Build complete", "SUCCESS")														
+			setBuildStatus("Build complete", "SUCCESS")														
 		}
 	}
 }
