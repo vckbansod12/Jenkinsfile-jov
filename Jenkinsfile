@@ -6,10 +6,11 @@ pipeline {
 	stages {
 		stage ('Build') {			
 			steps {
-				//sh './test.sh'
-				echo 'Hello'								
+				sh './Hello.sh'
+				//echo 'Hello'								
 			}															
-		}	
+		}
+		
 	}
 	post {
 		success {
